@@ -9,18 +9,9 @@ body {
     object-fit: fill;
     background-repeat: no-repeat;
     background-attachment: fixed; */
-    background-color: rgb(0, 77, 255);
+    background-color: white;
 }
 
-/* ----------------COLORS-------------------------------- */
-/* RED: rgb(228, 3, 3)
-ORANGE: rgb(255, 140, 0)
-YELLOW: rgb(255, 237, 0)
-GREEN:  rgb(0, 128, 38)
-BLUE; rgb(0, 77, 255);
-PURPLE: rgb(117, 7, 135) */
-
-/* ----------------------------------------------------------- */
 .logo {
     width: 160px;
     border: rgb(0, 128, 38) 2px solid;

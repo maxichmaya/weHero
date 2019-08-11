@@ -9,6 +9,7 @@ import { Findpeople } from "./findpeople";
 import Friends from "./friends";
 import { Chat } from "./chat";
 import { Wallpost } from "./posts";
+import Transition from "react-transition-group/Transition";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ export default class App extends React.Component {
                         <div className="headerRow">
                             <img className="logo2" src="/giphy.gif" />
                             <div className="traka">
-                                <p className="logoname">SIMPLICITY</p>
+                                <p className="logoname">weHero</p>
                                 <Link to="/chat">
                                     <p>Chat </p>
                                 </Link>

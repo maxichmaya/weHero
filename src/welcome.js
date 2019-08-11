@@ -15,7 +15,7 @@ export default class Welcome extends React.Component {
                 <div className="registration">
                     <h3>Welcome to</h3>
                     <img className="logo" src="giphy.gif" />
-                    <h1 className="logoNameStart">SIMPLICITY</h1>
+                    <h1 className="logoNameStart">weHero</h1>
                     <h4>...first social network for children</h4>
                     <div>
                         <Route exact path="/" component={Registration} />
