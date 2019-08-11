@@ -511,3 +511,8 @@ img.newUsers {
     left: 700px;
     top: 50px;
 }
+.donationButton {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}
