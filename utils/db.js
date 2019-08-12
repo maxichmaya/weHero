@@ -4,7 +4,7 @@ var db;
 if (process.env.DATABASE_URL) {
     db = spicedPg(process.env.DATABASE_URL);
 } else {
-    db = spicedPg("postgres:postgres:curry@localhost:5432/socialnetwork");
+    db = spicedPg("postgres:postgres:curry@localhost:5432/wehero");
 }
 
 exports.newUser = function(first, last, email, password) {
@@ -107,27 +107,3 @@ exports.getLastTenMessages = function() {
         DESC LIMIT 100`
     );
 };
-
-exports.wallPostinData = function(sender_wall, reciever_wall, wallpost) {
-    return db.query(
-        `INSERT INTO posts (sender_wall, reciever_wall, wallpost) VALUES ($1, $2, $3) RETURNING *`,
-        [sender_wall, reciever_wall, wallpost]
-    );
-};
-
-exports.showWallpost = function(id) {
-    return db.query(
-        `SELECT posts.id, sender_wall, reciever_wall, wallpost, posts.created_at, first, last, imageid
-        FROM posts
-        LEFT JOIN users
-        ON posts.sender_wall = users.id
-        WHERE reciever_wall = $1`,
-        [id]
-    );
-};
-
-// exports.showWallpost = function() {
-//     `SELECT posts.id, sender_wall, reciever_wall, wallpost, posts.created_at, sender_id, reciever_id
-//     FROM posts
-//     LEFT JOIN users ON posts.sender_wall = users.id AND reciever_wall = $2 || sender_wall = $2 AND reciever_wall = $1`;
-// };

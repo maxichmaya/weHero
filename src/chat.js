@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { socket } from "./socket";
 import { useSelector } from "react-redux";
+import Uploader from "./uploader";
 
-export function Chat() {
+export function Chat(props) {
     const chatMessages = useSelector(state => state && state.chatMessages);
     const chatMessage = useSelector(state => state && state.chatMessage);
 
@@ -26,17 +27,12 @@ export function Chat() {
     };
     return (
         <div className="chat">
-            <h1>Chat Room </h1>
+            <h1>News F </h1>
             <div className="chat-container" ref={elemRef}>
                 {chatMessages &&
                     chatMessages.map(message => (
                         <div key={message.id}>
                             <div className="chat-message" ref={elemRef}>
-                                <img
-                                    className="chat-identification"
-                                    src={message.imageid || "/3.png"}
-                                    alt={`${message.first} ${message.last}`}
-                                />
                                 <p className="chat-identification">
                                     {message.first} {message.last}{" "}
                                 </p>
@@ -50,6 +46,7 @@ export function Chat() {
                 placeholder="Add your message here"
                 onKeyDown={keyCheck}
             ></textarea>
+            <button onClick={props.onClick}>Upload</button>
         </div>
     );
 }

@@ -27,12 +27,7 @@ export default class OtherProfile extends React.Component {
                     <img className="friendsPic" src={this.state.imageid} />
                 </div>
                 <FriendButton otherProfileId={this.props.match.params.id} />
-                <Wallpost
-                    otherProfileId={this.props.match.params.id}
-                    first={this.props.first}
-                    last={this.props.last}
-                    imageid={this.props.imageid}
-                />
+
                 <div className="bioBox">
                     <h1 className="myNameIs">
                         {this.state.first} {this.state.last}

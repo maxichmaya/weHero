@@ -29,11 +29,3 @@ CREATE TABLE chats (
     message VARCHAR(1000),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-CREATE TABLE posts (
-    id SERIAL PRIMARY KEY,
-    sender_wall INT NOT NULL REFERENCES users(id),
-    reciever_wall INT REFERENCES users(id),
-    wallpost VARCHAR(1000),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);

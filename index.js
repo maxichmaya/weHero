@@ -285,38 +285,6 @@ app.post("/uploader", uploader.single("file"), s3.upload, function(req, res) {
         });
 }); //function closing
 
-// -----------------------WALLPOST---------------------------------
-app.post("/wallpostroute", async function(req, res) {
-    console.log("req.body.wallpost:", req.body.wallpost);
-    console.log(req.session.userId);
-    console.log("WHAT IS THIS:", req.body);
-    console.log(req.body.id);
-    try {
-        let { rows } = await db.wallPostinData(
-            req.session.userId,
-            req.body.id,
-            req.body.wallpost
-        );
-        console.log(rows);
-        res.json({ success: true, id: rows[0].id });
-    } catch (err) {
-        console.log("Error in wallpost route: ", err);
-    }
-});
-
-app.get("/wallpostroute/:otherProfileId", async function(req, res) {
-    console.log("get route posts wall", req.params.otherProfileId);
-    try {
-        let { rows } = await db.showWallpost(req.params.otherProfileId);
-        console.log("what is rows:", rows);
-        // let data = await db.userInfo(rows[0].sender_wall);
-        // console.log("what is data:", data.rows[0].imageid);
-        res.json(rows);
-    } catch (err) {
-        console.log("Error in friends route: ", err);
-    }
-});
-// ---------------------END OF WALLPOST--------------------------------------------
 // SERVER SIDE SOCKET //
 io.on("connection", async function(socket) {
     console.log(`socket with the id ${socket.id} is now connected`);
@@ -350,6 +318,12 @@ io.on("connection", async function(socket) {
     socket.on("show new messages", async () => {
         let { rows } = await db.getLastTenMessages();
         io.sockets.emit("chatMessages", rows);
+    });
+    socket.on("new upload", async imageid => {
+        let data = await db.newImage(userId, imageid);
+        io.sockets.emit("chatImage", {
+            imageid: data.imageid
+        });
     });
 });
 

@@ -18,14 +18,7 @@ export default function Profile(props) {
             </p>
 
             <BioEditor bio={props.bio} changeBio={props.changeBio} />
-            <div className="wallpostOnMyProfile">
-                <Wallpost
-                    otherProfileId={props.userId}
-                    first={props.first}
-                    last={props.last}
-                    imageid={props.imageid}
-                />
-            </div>
+
             <div className="donationButton">
                 <form
                     action="https://www.paypal.com/cgi-bin/webscr"

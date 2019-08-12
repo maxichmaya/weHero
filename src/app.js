@@ -27,27 +27,23 @@ export default class App extends React.Component {
     } //kraj mount
 
     render() {
-        // if (!this.state.id) {
-        //     return <img className="logo2" src="1.jpg" />;
-        // }
         return (
             <div className="mainContainer">
                 <BrowserRouter>
                     <div>
                         <div className="headerRow">
-                            <img className="logo2" src="/giphy.gif" />
                             <div className="traka">
                                 <p className="logoname">weHero</p>
                                 <Link to="/chat">
-                                    <p>Chat </p>
+                                    <p>News Feeds </p>
+                                </Link>
+
+                                <Link to="/projects">
+                                    <p>Projects</p>
                                 </Link>
 
                                 <Link to="/findpeople">
                                     <p>Find people </p>
-                                </Link>
-
-                                <Link to="/friends">
-                                    <p>Friends</p>
                                 </Link>
 
                                 <Link to="/">
@@ -110,7 +106,20 @@ export default class App extends React.Component {
                         />
                         <Route path="/findpeople" component={Findpeople} />
                         <Route path="/friends" component={Friends} />
-                        <Route path="/chat" component={Chat} />
+                        <Route
+                            path="/chat"
+                            render={props => {
+                                return (
+                                    <Chat
+                                        onClick={() => {
+                                            this.setState({
+                                                uploaderIsVisible: true
+                                            });
+                                        }}
+                                    />
+                                );
+                            }}
+                        />
                     </div>
                 </BrowserRouter>
             </div>

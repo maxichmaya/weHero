@@ -12,14 +12,6 @@ body {
     background-color: white;
 }
 
-.logo {
-    width: 160px;
-    border: rgb(0, 128, 38) 2px solid;
-    border-spacing: 5px;
-    border-width: thick;
-    border-radius: 10px;
-}
-
 .logo2 {
     width: 100px;
     border: rgb(228, 3, 3) 2px solid;
@@ -37,7 +29,9 @@ body {
     left: -630px;
 }
 .registration {
-    text-align: center;
+    text-align: right;
+    top: 800px;
+    left: 50px;
     padding-top: 2px;
 }
 .inputDeco {
@@ -48,8 +42,7 @@ body {
 input {
     text-decoration: none;
     border: none;
-    border-bottom: 3px solid rgb(255, 237, 0);
-    background-color: rgb(117, 7, 135);
+    border-bottom: 1px solid black;
     text-align: center;
     font-size: 20px;
 }
@@ -88,7 +81,6 @@ input.custom {
     border-radius: 10px;
 }
 .headerRow {
-    border-bottom: solid darkgreen 2px;
     padding: 15px;
 }
 
@@ -96,7 +88,7 @@ input.custom {
     position: absolute;
     list-style-type: none;
     right: 130px;
-    top: 110px;
+    top: 50px;
     border: none;
     color: black;
     padding-left: 10px;
@@ -359,10 +351,10 @@ img.newUsers {
 .chat {
     color: white;
     text-align: center;
-    background-color: rgb(255, 237, 0);
+    /* background-color: rgb(255, 237, 0); */
     opacity: 0.8;
     border-radius: 20px;
-    border: 5px solid rgb(255, 140, 0);
+    /* border: 5px solid rgb(255, 140, 0); */
     margin: 10px 50px 0px 50px;
 }
 
@@ -371,14 +363,14 @@ img.newUsers {
 }
 .chat-container {
     height: 380px;
-    width: 700px;
+    width: 900px;
     overflow-y: scroll;
     background-color: rgb(0, 128, 38);
     color: white;
     border-radius: 20px;
-    border: 3px solid rgb(255, 140, 0);
+    /* border: 3px solid rgb(255, 140, 0); */
     position: relative;
-    left: 25%;
+    left: 15%;
     padding: 1px;
 }
 

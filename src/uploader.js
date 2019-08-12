@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "./axios";
+import { socket } from "./socket";
+import { useSelector } from "react-redux";
 
 export default class Uploader extends React.Component {
     constructor(props) {
@@ -15,8 +17,9 @@ export default class Uploader extends React.Component {
         axios
             .post("/uploader", formData)
             .then(results => {
-                this.props.done(results.data.imageid);
+                socket.emit("new upload", results.data.imageid);
             })
+
             .catch(err => {
                 console.log("updateFailed", err);
             });
@@ -33,7 +36,7 @@ export default class Uploader extends React.Component {
                     <button className="btn" onClick={e => this.clickButton(e)}>
                         X
                     </button>
-                    <h2> Do you wanna change your pic? </h2>
+
                     <input
                         className="file"
                         type="file"
