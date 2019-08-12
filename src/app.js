@@ -10,6 +10,7 @@ import Friends from "./friends";
 import { Chat } from "./chat";
 import { Wallpost } from "./posts";
 import Transition from "react-transition-group/Transition";
+import Projects from "./projects";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -35,7 +36,11 @@ export default class App extends React.Component {
                             <div className="traka">
                                 <p className="logoname">weHero</p>
                                 <Link to="/chat">
-                                    <p>News Feeds </p>
+                                    <p>News</p>
+                                </Link>
+
+                                <Link to="/kenya">
+                                    <p>Kenya</p>
                                 </Link>
 
                                 <Link to="/projects">
