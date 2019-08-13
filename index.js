@@ -336,7 +336,6 @@ io.on("connection", async function(socket) {
     });
     socket.on("new upload", async imageid => {
         console.log("made it here", imageid);
-        let data = await db.chatImage(userId, imageid);
         io.sockets.emit("chatImage", {
             imageid: imageid
         });
