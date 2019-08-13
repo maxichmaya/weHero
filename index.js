@@ -320,9 +320,10 @@ io.on("connection", async function(socket) {
         io.sockets.emit("chatMessages", rows);
     });
     socket.on("new upload", async imageid => {
+        console.log("made it here", imageid);
         let data = await db.newImage(userId, imageid);
         io.sockets.emit("chatImage", {
-            imageid: data.imageid
+            imageid: imageid
         });
     });
 });

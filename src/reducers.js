@@ -62,5 +62,12 @@ export default function(state = {}, action) {
             chatMessages: array
         };
     }
+
+    if (action.type == "NEW_IMAGE") {
+        state = {
+            ...state,
+            chatMessages: [...state.chatMessages, action.chatImage]
+        };
+    }
     return state;
 }

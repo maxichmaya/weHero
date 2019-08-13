@@ -47,3 +47,11 @@ export async function chatMessage(rows) {
         text: rows
     };
 }
+
+export async function chatImage(data) {
+    console.log("WHAT IS data", data);
+    return {
+        type: "NEW_IMAGE",
+        chatImage: data
+    };
+}

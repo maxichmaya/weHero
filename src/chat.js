@@ -7,7 +7,7 @@ export function Chat(props) {
     const chatMessages = useSelector(state => state && state.chatMessages);
     const chatMessage = useSelector(state => state && state.chatMessage);
 
-    // console.log("here are my last10 messages", chatMessages);
+    console.log("here are my last10 messages", chatMessages);
 
     const elemRef = useRef();
 
@@ -37,6 +37,7 @@ export function Chat(props) {
                                     {message.first} {message.last}{" "}
                                 </p>
                                 <p>{message.message}</p>
+                                <img src={message.imageid} />
                             </div>
                         </div>
                     ))}
