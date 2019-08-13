@@ -107,7 +107,7 @@ exports.chatInDatabase = function(sender_id, message) {
 
 exports.getLastTenMessages = function() {
     return db.query(
-        `SELECT chats.id, sender_id, chats.message, chats.created_at, users.first, users.last, users.imageid, chats.imageid AS chatimageid
+        `SELECT chats.id, sender_id, chats.message, chats.created_at, users.first, users.last, chats.imageid AS chatimageid
         FROM chats
         LEFT JOIN users ON users.id = chats.sender_id
         ORDER BY chats.id

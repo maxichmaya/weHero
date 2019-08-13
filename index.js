@@ -313,7 +313,7 @@ io.on("connection", async function(socket) {
 
     socket.request.first = data.rows[0].first;
     socket.request.last = data.rows[0].last;
-    socket.request.imageid = data.rows[0].imageid;
+    // socket.request.imageid = data.rows[0].imageid;
 
     socket.on("My amazing chat message", async msg => {
         let { rows } = await db.chatInDatabase(userId, msg);
@@ -323,8 +323,7 @@ io.on("connection", async function(socket) {
             message: rows[0].message,
             created_at: rows[0].created_at,
             first: socket.request.first,
-            last: socket.request.last,
-            imageid: socket.request.imageid
+            last: socket.request.last
         });
 
         console.log("new rows in chat: ", rows[0]);

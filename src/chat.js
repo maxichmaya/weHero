@@ -38,8 +38,9 @@ export function Chat(props) {
                                     {message.first} {message.last}
                                 </p>
                                 <p>{message.message}</p>
-                                <img src={message.chatimageid} />
                             </div>
+
+                            <img src={message.chatimageid} />
                         </div>
                     ))}
             </div>

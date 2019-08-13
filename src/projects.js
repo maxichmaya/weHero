@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "./axios";
+import { Link } from "react-router-dom";
 
-export default function Projects() {
+export function Projects() {
+    const [community, setCommunity] = useState();
+    const [individual, setIndividual] = useState();
+
+    useEffect(() => {});
     return (
         <div className="row">
             <div className="col">
-                <div className="leftside">COMMUNITY</div>
-                <div className="rightside">INDIVIDUAL</div>
+                <div className="leftside">
+                    <button onClick={() => setCommunity()}>COMMUNITY</button>
+                </div>
+                <div className="rightside">
+                    <button onClick={() => setIndividual()}>INDIVIDUAL</button>;
+                </div>
             </div>
         </div>
     );
@@ -16,4 +25,5 @@ export default function Projects() {
 
 //donationButton will go here
 
-//still not sure if I want to keep find people component or not?!?
+//
+//
