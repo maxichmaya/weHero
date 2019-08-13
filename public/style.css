@@ -25,8 +25,8 @@ body {
     font-family: "Finger Paint", cursive;
     font-size: 50px;
     position: absolute;
-    top: -120px;
-    left: -630px;
+    top: -90px;
+    right: 130%;
 }
 .registration {
     text-align: right;
@@ -87,7 +87,7 @@ input.custom {
 .traka {
     position: absolute;
     list-style-type: none;
-    right: 130px;
+    right: 30%;
     top: 50px;
     border: none;
     color: black;
@@ -96,6 +96,13 @@ input.custom {
     font-size: 20px;
 }
 
+.headerRow .helloToUser {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
 .traka p {
     display: inline;
     text-decoration: none;
@@ -340,6 +347,7 @@ img.newUsers {
 
 .findPeopleStyled {
     text-align: center;
+    margin-top: 80px;
 }
 
 .searchengine {
@@ -360,9 +368,10 @@ img.newUsers {
 
 .chat h1 {
     color: red;
+    margin-top: 80px;
 }
 .chat-container {
-    height: 380px;
+    height: 500px;
     width: 900px;
     overflow-y: scroll;
     background-color: rgb(0, 128, 38);
@@ -400,6 +409,12 @@ img.newUsers {
     width: 40px;
     position: absolute;
     left: 5px;
+}
+
+.chat-message img {
+    width: 200px;
+    height: 250px;
+    object-fit: contain;
 }
 
 .wallpost-container .chat-identification {
@@ -498,4 +513,33 @@ img.newUsers {
     position: absolute;
     top: 400px;
     left: 50px;
+}
+
+.Kenya-container {
+    text-align: left;
+    margin-top: 300px;
+    font-size: 40px;
+}
+
+/* .projects-container {
+    border: 1px solid black;
+    width: 1330px;
+    height: 550px;
+    display: flex;
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 50px;
+} */
+
+.leftside,
+.rightside {
+    width: 1330px;
+    height: 550px;
+}
+.leftside {
+    background: red;
+}
+
+.rightside {
+    background: blue;
 }

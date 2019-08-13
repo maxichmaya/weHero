@@ -3,9 +3,11 @@ import axios from "./axios";
 
 export default function Projects() {
     return (
-        <div className="projects-container">
-            <div className="community-projects">COMMUNITY</div>
-            <div className="individual-projects">INDIVIDUAL</div>
+        <div className="row">
+            <div className="col">
+                <div className="leftside">COMMUNITY</div>
+                <div className="rightside">INDIVIDUAL</div>
+            </div>
         </div>
     );
 }

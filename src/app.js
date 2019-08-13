@@ -11,6 +11,7 @@ import { Chat } from "./chat";
 import { Wallpost } from "./posts";
 import Transition from "react-transition-group/Transition";
 import Projects from "./projects";
+import Kenya from "./kenya";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -65,7 +66,10 @@ export default class App extends React.Component {
                                 last={this.state.last}
                                 imageid={this.state.imageid}
                                 onClick={() => {
-                                    this.setState({ uploaderIsVisible: true });
+                                    this.setState({
+                                        uploaderIsVisible: true,
+                                        whocalledme: null
+                                    });
                                 }}
                             />
                         </div>
@@ -77,9 +81,11 @@ export default class App extends React.Component {
                                         uploaderIsVisible: false
                                     })
                                 }
-                                onClick={() => {
+                                onClick={whocalledme => {
+                                    console.log("who called me:", whocalledme);
                                     this.setState({ uploaderIsVisible: false });
                                 }}
+                                whocalledme={this.state.whocalledme}
                             />
                         )}
 
@@ -110,15 +116,22 @@ export default class App extends React.Component {
                             )}
                         />
                         <Route path="/findpeople" component={Findpeople} />
+                        <Route path="/projects" component={Projects} />
+                        <Route path="/kenya" component={Kenya} />
                         <Route path="/friends" component={Friends} />
                         <Route
                             path="/chat"
                             render={props => {
                                 return (
                                     <Chat
-                                        onClick={() => {
+                                        onClick={whocalledme => {
+                                            console.log(
+                                                "who called me?",
+                                                whocalledme
+                                            );
                                             this.setState({
-                                                uploaderIsVisible: true
+                                                uploaderIsVisible: true,
+                                                whocalledme: whocalledme
                                             });
                                         }}
                                     />

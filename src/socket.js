@@ -11,9 +11,9 @@ export const init = store => {
 
         socket.on("chatMessage", msg => store.dispatch(chatMessage(msg)));
 
-        socket.on("chatImage", imageid => {
+        socket.on("chatImage", image => {
             console.log("chat in socket");
-            store.dispatch(chatImage(imageid));
+            store.dispatch(chatImage(image));
         });
     }
 };

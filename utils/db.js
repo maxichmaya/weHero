@@ -34,6 +34,13 @@ exports.newImage = function newImage(id, imageid) {
     ]);
 };
 
+exports.chatImage = function chatImage(sender_id, imageid) {
+    return db.query(
+        `INSERT INTO chats(sender_id, imageid) VALUES ($1, $2) RETURNING id`,
+        [sender_id, imageid]
+    );
+};
+
 exports.addBio = function addBio(id, bio) {
     return db.query(`UPDATE users SET bio = $2 WHERE id = $1 RETURNING bio`, [
         id,
@@ -100,7 +107,7 @@ exports.chatInDatabase = function(sender_id, message) {
 
 exports.getLastTenMessages = function() {
     return db.query(
-        `SELECT chats.id, sender_id, chats.message, chats.created_at, users.first, users.last, users.imageid
+        `SELECT chats.id, sender_id, chats.message, chats.created_at, users.first, users.last, users.imageid, chats.imageid AS chatimageid
         FROM chats
         LEFT JOIN users ON users.id = chats.sender_id
         ORDER BY chats.id

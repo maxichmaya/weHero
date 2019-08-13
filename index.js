@@ -270,12 +270,27 @@ app.post("/login", (req, res) => {
         });
 });
 
-app.post("/uploader", uploader.single("file"), s3.upload, function(req, res) {
+app.post("/uploader/profile", uploader.single("file"), s3.upload, function(
+    req,
+    res
+) {
     const fullurl = config.s3Url + req.file.filename;
-    console.log("req.session.userId:", req.session.userId);
-    console.log("fullurl: ", fullurl);
-    console.log("req.file.filename", req.file.filename);
     db.newImage(req.session.userId, fullurl)
+        .then(() => {
+            res.json({ imageid: fullurl });
+        })
+        .catch(err => {
+            console.log("err: ", err);
+            res.sendStatus(500);
+        });
+});
+
+app.post("/uploader/chat", uploader.single("file"), s3.upload, function(
+    req,
+    res
+) {
+    const fullurl = config.s3Url + req.file.filename;
+    db.chatImage(req.session.userId, fullurl)
         .then(() => {
             res.json({ imageid: fullurl });
         })
@@ -321,7 +336,7 @@ io.on("connection", async function(socket) {
     });
     socket.on("new upload", async imageid => {
         console.log("made it here", imageid);
-        let data = await db.newImage(userId, imageid);
+        let data = await db.chatImage(userId, imageid);
         io.sockets.emit("chatImage", {
             imageid: imageid
         });

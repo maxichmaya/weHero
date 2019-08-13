@@ -6,32 +6,29 @@ export function Findpeople() {
     const [users, setWhoJoined] = useState();
     const [val, setVal] = useState();
 
-    useEffect(
-        () => {
-            if (!val) {
-                (async function checkFriends() {
-                    const { data } = await axios.get("/users");
-                    console.log("data", data);
-                    setWhoJoined(data);
-                })();
-            } else {
-                (async () => {
-                    const { data } = await axios.post("/findnewfriend/", {
-                        key: val
-                    });
-                    console.log("data:", data);
-                    setWhoJoined(data);
-                })();
-            }
-        },
-        [val]
-    );
+    useEffect(() => {
+        if (!val) {
+            (async function checkFriends() {
+                const { data } = await axios.get("/users");
+                console.log("data", data);
+                setWhoJoined(data);
+            })();
+        } else {
+            (async () => {
+                const { data } = await axios.post("/findnewfriend/", {
+                    key: val
+                });
+                console.log("data:", data);
+                setWhoJoined(data);
+            })();
+        }
+    }, [val]);
 
     return (
         <div>
             <div className="findPeopleStyled">
                 <h2>Find people</h2>
-                <h4>Checkout who just joined the Simplicity's club</h4>
+                <h4>Checkout who just joined the Hero's club</h4>
             </div>
             <div className="finderConatiner">
                 {users &&

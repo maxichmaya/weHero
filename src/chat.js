@@ -6,6 +6,7 @@ import Uploader from "./uploader";
 export function Chat(props) {
     const chatMessages = useSelector(state => state && state.chatMessages);
     const chatMessage = useSelector(state => state && state.chatMessage);
+    const chatImage = useSelector(state => state && state.chatImage);
 
     console.log("here are my last10 messages", chatMessages);
 
@@ -27,17 +28,17 @@ export function Chat(props) {
     };
     return (
         <div className="chat">
-            <h1>News F </h1>
+            <h1>Check news, updates and discuss important matters</h1>
             <div className="chat-container" ref={elemRef}>
                 {chatMessages &&
                     chatMessages.map(message => (
                         <div key={message.id}>
                             <div className="chat-message" ref={elemRef}>
                                 <p className="chat-identification">
-                                    {message.first} {message.last}{" "}
+                                    {message.first} {message.last}
                                 </p>
                                 <p>{message.message}</p>
-                                <img src={message.imageid} />
+                                <img src={message.chatimageid} />
                             </div>
                         </div>
                     ))}
@@ -47,7 +48,7 @@ export function Chat(props) {
                 placeholder="Add your message here"
                 onKeyDown={keyCheck}
             ></textarea>
-            <button onClick={props.onClick}>Upload</button>
+            <button onClick={() => props.onClick("chat")}>Upload</button>
         </div>
     );
 }
