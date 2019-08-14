@@ -13,6 +13,7 @@ import Transition from "react-transition-group/Transition";
 import Projects from "./projects";
 import Kenya from "./kenya";
 
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -35,29 +36,26 @@ export default class App extends React.Component {
                     <div>
                         <div className="headerRow">
                             <div className="traka">
-                                <p className="logoname">weHero</p>
-                                <Link to="/chat">
-                                    <p>News</p>
-                                </Link>
+                                <p className="logoname">Bridge</p>
 
                                 <Link to="/kenya">
-                                    <p>Kenya</p>
+                                    <p>Why Kenya</p>
                                 </Link>
 
                                 <Link to="/projects">
                                     <p>Projects</p>
                                 </Link>
 
-                                <Link to="/findpeople">
-                                    <p>Find people </p>
+                                <Link to="/chat">
+                                    <p>News</p>
                                 </Link>
 
                                 <Link to="/">
                                     <p>My profile</p>
                                 </Link>
 
-                                <Link to="/login">
-                                    <p>Logout</p>
+                                <Link to="/findpeople">
+                                    <p>Find people </p>
                                 </Link>
                             </div>
 
@@ -119,6 +117,7 @@ export default class App extends React.Component {
                         <Route path="/projects" component={Projects} />
                         <Route path="/kenya" component={Kenya} />
                         <Route path="/friends" component={Friends} />
+
                         <Route
                             path="/chat"
                             render={props => {
