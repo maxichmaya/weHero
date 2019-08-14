@@ -10,19 +10,17 @@ export default function Projects() {
     console.log("WHAT IS COOMUNITY?", community);
     useEffect(() => {}, []);
     return (
-        <div className="col">
-            <div className="projects-container">
-                <div className="up">
-                    <div className="leftside">
-                        <button
-                            className="upbtn"
-                            onClick={() => setCommunity(true)}
-                        >
-                            COMMUNITY
-                        </button>
-                    </div>
+        <div>
+            <section className="projects-container">
+                <div className="projects-left">
+                    <button
+                        className="upbtn"
+                        onClick={() => setCommunity(true)}
+                    >
+                        COMMUNITY
+                    </button>
                 </div>
-                <div className="rightside">
+                <div className="projects-right">
                     <button
                         className="downbtn"
                         onClick={() => setIndividual(true)}
@@ -30,7 +28,7 @@ export default function Projects() {
                         INDIVIDUAL
                     </button>
                 </div>
-            </div>
+            </section>
 
             {community && (
                 <div className="communityPop">

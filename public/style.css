@@ -1,5 +1,7 @@
 * {
     font-family: "BenchNine", sans-serif;
+    /* margin: 0;
+    padding: 0; */
 }
 
 body {
@@ -585,55 +587,80 @@ img.newUsers {
 }
 
 .projects-container {
-    border: 1px solid black;
-    width: 1330px;
-    height: 550px;
+    /* width: 1330px;
+    height: 550px; */
     display: flex;
-    display: inline-flex;
-    flex-direction: column;
     margin-top: 50px;
 }
 
-.leftside,
-.rightside {
-    width: 1330px;
-    height: 550px;
+.projects-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.leftside {
-    background: red;
+.projects-left {
+    background: white;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .upbtn {
-    position: absolute;
-    top: 25%;
-    left: 40%;
+    margin: 200px;
     padding: 50px;
-    border: 20px darkgreen solid;
+    border: 20px rgb(196, 111, 31) solid;
     background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(196, 111, 31);
 }
-.up:hover .leftside {
-    background-color: blue;
+.projects-left:hover {
+    background-color: rgb(196, 111, 31);
 }
-.up:hover .upbtn {
+.projects-left:hover .upbtn {
     padding: 50px;
-    border: 20px white solid;
+    /* border: 20px white solid; */
     border-radius: 50%;
-    background-color: blue;
+    background-color: white;
+    color: rgb(196, 111, 31);
+    font-size: 40px;
     transition: 1s;
 }
 
-.rightside {
+.projects-right {
     background: white;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .downbtn {
-    position: absolute;
-    top: 65%;
-    left: 40%;
+    margin: 200px;
     padding: 50px;
-    border: 20px green solid;
+    border: 20px rgb(196, 111, 31) solid;
     background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(196, 111, 31);
+}
+
+.projects-right:hover {
+    background-color: rgb(196, 111, 31);
+}
+
+.projects-right:hover .downbtn {
+    padding: 50px;
+    /* border: 20px white solid; */
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(196, 111, 31);
+    font-size: 40px;
+    transition: 1s;
 }
 
 .communityPop {
