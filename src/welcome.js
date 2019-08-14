@@ -13,8 +13,14 @@ export default class Welcome extends React.Component {
         return (
             <HashRouter>
                 <div>
-                    <h1 className="logoNameStart">Bridge</h1>
-                    <h4>here I will put a text about us</h4>
+                    <div className="intro">
+                        <h1 className="logoNameStart">Bridge</h1>
+                        <h4>
+                            ...here to connect <br /> and make the world a
+                            better place
+                        </h4>
+                    </div>
+
                     <div className="homepage-hero-module">
                         <div className="video-container">
                             <div className="filter"></div>

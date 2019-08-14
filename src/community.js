@@ -4,7 +4,7 @@ export default function Community() {
     return (
         <div className="community-container">
             <div>
-                WATER <img />
+                WATER <img src="../public/water.jpg" />
             </div>
             <div>
                 HEALTH CENTAR <img />
@@ -15,7 +15,9 @@ export default function Community() {
             <div>
                 ORPHANAGE <img />
             </div>
-
+            <button className="btn" onClick={() => setCommunity(false)}>
+                X
+            </button>
             <div className="donationButton">
                 <form
                     action="https://www.paypal.com/cgi-bin/webscr"

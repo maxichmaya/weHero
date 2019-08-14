@@ -78,19 +78,25 @@ body {
     top: -90px;
     right: 130%;
 }
-.registration {
-    text-align: right;
-    top: 800px;
+.intro {
+    position: absolute;
+    top: 100px;
+    color: white;
+    z-index: 3;
     left: 50px;
-    padding-top: 2px;
 }
-.inputDeco {
-    background-color: rgb(117, 7, 135);
-    padding: 10px;
+.registration {
+    position: absolute;
+    /* text-align: right; */
+    top: 480px;
+    right: 50px;
+    padding-top: 2px;
 }
 
 input {
+    color: white;
     text-decoration: none;
+    background-color: transparent;
     border: none;
     border-bottom: 1px solid black;
     text-align: center;
@@ -102,25 +108,27 @@ input.custom {
 }
 
 .loginDeco {
-    color: rgb(0, 128, 38);
-    position: relative;
-    text-align: right;
-    right: -530px;
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 140px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .firstBtn {
     border-radius: 20px;
     padding: 5px;
     margin-top: 10px;
-    background-color: rgb(255, 140, 0);
+    background-color: rgb(2, 35, 10);
+    color: white;
     margin-bottom: 30px;
 }
 .firstBtn:hover {
     text-transform: uppercase;
     font-weight: bold;
-    background-color: rgb(228, 3, 3);
+    background-color: white;
+    color: rgb(2, 35, 10);
 }
 
 .littlepic {
@@ -560,15 +568,20 @@ img.newUsers {
     top: 50px;
 }
 .donationButton {
-    position: absolute;
-    top: 400px;
-    left: 50px;
+    position: relative;
+    /* top: 400px;
+    left: 50px; */
 }
 
 .Kenya-container {
-    text-align: left;
-    margin-top: 300px;
+    display: flex;
+    align-content: flex-end;
+    height: 500px;
+    border: 1px red solid;
+    margin-top: 80px;
     font-size: 40px;
+    background-image: url("kenya.jpg");
+    background-repeat: no-repeat;
 }
 
 .projects-container {
@@ -586,22 +599,55 @@ img.newUsers {
     width: 1330px;
     height: 550px;
 }
+
 .leftside {
     background: red;
 }
 
-.leftside button {
+.upbtn {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 25%;
+    left: 40%;
+    padding: 50px;
+    border: 20px darkgreen solid;
+    background-color: white;
+}
+.up:hover .leftside {
+    background-color: blue;
+}
+.up:hover .upbtn {
+    padding: 50px;
+    border: 20px white solid;
+    border-radius: 50%;
+    background-color: blue;
+    transition: 1s;
 }
 
 .rightside {
-    background: blue;
+    background: white;
 }
 
-.rightside button {
+.downbtn {
     position: absolute;
-    top: 80%;
-    left: 50%;
+    top: 65%;
+    left: 40%;
+    padding: 50px;
+    border: 20px green solid;
+    background-color: white;
+}
+
+.communityPop {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+}
+
+.individualPop {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
 }

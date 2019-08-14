@@ -133,20 +133,20 @@ app.get("/friendship/:otherProfileId", async function(req, res) {
         // console.log("user from checkfriedship:", user);
 
         if (user.rows.length == 0) {
-            res.json({ buttonText: "Make friend request" });
+            res.json({ buttonText: "Lets Team Up" });
         } else if (
             req.session.userId == user.rows[0].reciever_id &&
             user.rows[0].accepted == false
         ) {
             res.json({
-                buttonText: "Accept friend request"
+                buttonText: "Accept Team Up request"
             });
         } else if (
             req.session.userId == user.rows[0].sender_id &&
             user.rows[0].accepted == false
         ) {
             res.json({
-                buttonText: "Cancel friend request"
+                buttonText: "Cancel Team Up request"
             });
         } else if (
             req.session.userId == user.rows[0].reciever_id &&
@@ -154,7 +154,7 @@ app.get("/friendship/:otherProfileId", async function(req, res) {
         ) {
             console.log("about to send unfriend");
             res.json({
-                buttonText: "Unfriend"
+                buttonText: "No Team no more"
             });
         } else if (
             req.session.userId == user.rows[0].sender_id &&
@@ -162,7 +162,7 @@ app.get("/friendship/:otherProfileId", async function(req, res) {
         ) {
             console.log("about to send unfriend");
             res.json({
-                buttonText: "Unfriend"
+                buttonText: "No Team no more"
             });
         }
     } catch (err) {
@@ -173,24 +173,24 @@ app.get("/friendship/:otherProfileId", async function(req, res) {
 app.post("/friendship/", async function(req, res) {
     console.log("req.body:", req.body);
     try {
-        if (req.body.button == "Make friend request") {
+        if (req.body.button == "Lets Team Up") {
             await db.makeFriendRequest(req.session.userId, req.body.id);
-            res.json({ buttonText: "Cancel friend request" });
+            res.json({ buttonText: "Cancel Team Up request" });
         }
         console.log("req.body.otherProfileId:", req.body.id);
-        if (req.body.button == "Cancel friend request") {
+        if (req.body.button == "Cancel Team Up request") {
             await db.cancelFriendRequest(req.session.userId, req.body.id);
-            res.json({ buttonText: "Make friend request" });
+            res.json({ buttonText: "Lets Team Up" });
         }
 
-        if (req.body.button == "Accept friend request") {
+        if (req.body.button == "Accept Team Up request") {
             await db.acceptFriendRequest(req.session.userId);
-            res.json({ buttonText: "Unfriend" });
+            res.json({ buttonText: "No Team no more" });
         }
 
-        if (req.body.button == "Unfriend") {
+        if (req.body.button == "No Team no more") {
             await db.cancelFriendRequest(req.session.userId, req.body.id);
-            res.json({ buttonText: "Make friend request" });
+            res.json({ buttonText: "Lets Team Up" });
         }
     } catch (err) {
         console.log("Error in friendbutton POST route: ", err);
