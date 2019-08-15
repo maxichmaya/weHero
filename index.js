@@ -354,7 +354,7 @@ app.get("*", function(req, res) {
 // --------------DO NOT DELETE THIS
 
 // we would res.json
-server.listen(8080, function() {
+server.listen(process.env.PORT || 8080, function() {
     console.log("I'm listening.");
 });
 
