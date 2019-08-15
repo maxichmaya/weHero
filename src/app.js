@@ -12,6 +12,7 @@ import { Wallpost } from "./posts";
 import Transition from "react-transition-group/Transition";
 import Projects from "./projects";
 import Kenya from "./kenya";
+import { AnimatedSwitch } from "react-router-transition";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -84,62 +85,70 @@ export default class App extends React.Component {
                                 }
                                 onClick={whocalledme => {
                                     console.log("who called me:", whocalledme);
-                                    this.setState({ uploaderIsVisible: false });
+                                    this.setState({
+                                        uploaderIsVisible: false
+                                    });
                                 }}
                                 whocalledme={this.state.whocalledme}
                             />
                         )}
-
-                        <Route
-                            exact
-                            path="/"
-                            render={props => {
-                                return (
-                                    <Profile
-                                        first={this.state.first}
-                                        last={this.state.last}
-                                        imageid={this.state.imageid}
-                                        bio={this.state.bio}
-                                        changeBio={bio =>
-                                            this.setState({ bio: bio })
-                                        }
+                        <AnimatedSwitch
+                            atEnter={{ opacity: 0 }}
+                            atLeave={{ opacity: 0 }}
+                            atActive={{ opacity: 1 }}
+                            className="switch-wrapper"
+                        >
+                            <Route
+                                exact
+                                path="/"
+                                render={props => {
+                                    return (
+                                        <Profile
+                                            first={this.state.first}
+                                            last={this.state.last}
+                                            imageid={this.state.imageid}
+                                            bio={this.state.bio}
+                                            changeBio={bio =>
+                                                this.setState({ bio: bio })
+                                            }
+                                        />
+                                    );
+                                }}
+                            />
+                            <Route
+                                path="/user/:id"
+                                render={props => (
+                                    <OtherProfile
+                                        {...props}
+                                        key={props.match.url}
                                     />
-                                );
-                            }}
-                        />
-                        <Route
-                            path="/user/:id"
-                            render={props => (
-                                <OtherProfile
-                                    {...props}
-                                    key={props.match.url}
-                                />
-                            )}
-                        />
-                        <Route path="/findpeople" component={Findpeople} />
-                        <Route path="/projects" component={Projects} />
-                        <Route path="/kenya" component={Kenya} />
-                        <Route path="/friends" component={Friends} />
+                                )}
+                            />
+                            <Route path="/findpeople" component={Findpeople} />
+                            <Route path="/projects" component={Projects} />
+                            <Route path="/kenya" component={Kenya} />
+                            <Route path="/friends" component={Friends} />
 
-                        <Route
-                            path="/chat"
-                            render={props => {
-                                return (
-                                    <Chat
-                                        onClick={whocalledme => {
-                                            console.log(
-                                                "who called me?",
-                                                whocalledme
-                                            );
-                                            this.setState({
-                                                uploaderIsVisible: true,
-                                                whocalledme: whocalledme
-                                            });
-                                        }}
-                                    />
-                                );
-                            }}
-                        />
+                            <Route
+                                path="/chat"
+                                render={props => {
+                                    return (
+                                        <Chat
+                                            onClick={whocalledme => {
+                                                console.log(
+                                                    "who called me?",
+                                                    whocalledme
+                                                );
+                                                this.setState({
+                                                    uploaderIsVisible: true,
+                                                    whocalledme: whocalledme
+                                                });
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                        </AnimatedSwitch>
                     </div>
                 </BrowserRouter>
             </div>

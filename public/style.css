@@ -14,6 +14,10 @@ body {
     background-color: white;
 }
 
+.switch-wrapper {
+    position: relative;
+}
+
 /* -------------background video za welcome--------------- */
 .homepage-hero-module {
     border-right: none;
@@ -78,7 +82,7 @@ body {
     font-size: 50px;
     position: absolute;
     top: -90px;
-    right: 130%;
+    right: 690px;
 }
 .intro {
     position: absolute;
@@ -437,7 +441,8 @@ img.newUsers {
 }
 
 .chat h1 {
-    color: red;
+    text-align: center;
+    color: black;
     margin-top: 80px;
 }
 .chat-container {
@@ -457,6 +462,7 @@ img.newUsers {
 .chat-message {
     position: relative;
     display: inline-block;
+
     color: white;
     height: 80px;
     border-bottom: white solid 1px;
@@ -609,7 +615,7 @@ img.newUsers {
     /* width: 1330px;
     height: 550px; */
     display: flex;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .projects-container div {
