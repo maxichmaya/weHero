@@ -16,9 +16,7 @@ var path = require("path");
 
 const server = require("http").Server(app);
 const io = require("socket.io")(server, {
-    origins: process.env.PORT
-        ? "https://wehero-bridge.herokuapp.com"
-        : "localhost:8080"
+    origins: "localhost:8080 wehero-bridge.herokuapp.com:*"
 });
 
 app.use(compression());
