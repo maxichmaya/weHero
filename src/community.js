@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function Community() {
+export default function Community(props) {
+    function clickHandle() {
+        props.clickHandle();
+    }
+
     return (
         <div>
             <div className="community-container">
@@ -10,7 +14,7 @@ export default function Community() {
                 <div className="three">SCHOOL'S ROOF</div>
                 <div className="four">ORPHANAGE</div>
             </div>
-            <button className="btn" onClick={() => setCommunity(false)}>
+            <button className="btn" onClick={clickHandle}>
                 X
             </button>
 

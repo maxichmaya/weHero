@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function Individual() {
+export default function Individual(props) {
+    function clickHandle() {
+        props.clickHandle();
+    }
     return (
         <div>
             <div className="community-container">
@@ -10,7 +13,7 @@ export default function Individual() {
                 <div className="seven">MAIZE</div>
                 <div className="eight">ANIMAL</div>
             </div>
-            <button className="btn" onClick={() => setIndividual(false)}>
+            <button className="btn" onClick={clickHandle}>
                 X
             </button>
             <div className="donationButton">

@@ -58,7 +58,7 @@ export default class App extends React.Component {
                                 </Link>
 
                                 <Link to="/friends">
-                                    <p>My Conntacts</p>
+                                    <p>My Contacts</p>
                                 </Link>
                             </div>
 
