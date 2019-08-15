@@ -15,7 +15,11 @@ var uidSafe = require("uid-safe");
 var path = require("path");
 
 const server = require("http").Server(app);
-const io = require("socket.io")(server, { origins: "localhost:8080" });
+const io = require("socket.io")(server, {
+    origins: process.env.PORT
+        ? "https://wehero-bridge.herokuapp.com"
+        : "localhost:8080"
+});
 
 app.use(compression());
 app.use(express.static("./public"));

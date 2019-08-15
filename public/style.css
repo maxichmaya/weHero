@@ -1,7 +1,7 @@
 * {
     font-family: "BenchNine", sans-serif;
-    /* margin: 0;
-    padding: 0; */
+    /* margin: 0; */
+    /* padding: 0;  */
 }
 
 body {
@@ -263,6 +263,7 @@ input.custom {
     background-color: white;
     color: rgb(2, 35, 10);
 }
+
 .profile {
     position: absolute;
     left: 10px;
@@ -588,12 +589,20 @@ img.newUsers {
 
 .Kenya-container {
     display: flex;
-    align-content: flex-end;
+    justify-content: flex-end;
+    align-content: center;
     height: 500px;
     margin-top: 80px;
     font-size: 40px;
     background-image: url("kenya.jpg");
     background-repeat: no-repeat;
+}
+
+.aboutKenya {
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 150px;
+    padding-top: 100px;
 }
 
 .projects-container {
