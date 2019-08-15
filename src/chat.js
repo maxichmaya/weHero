@@ -49,7 +49,9 @@ export function Chat(props) {
                 placeholder="Add your message here"
                 onKeyDown={keyCheck}
             ></textarea>
-            <button onClick={() => props.onClick("chat")}>Upload</button>
+            <button className="firstBtn" onClick={() => props.onClick("chat")}>
+                Upload
+            </button>
         </div>
     );
 }
