@@ -2,21 +2,17 @@ import React from "react";
 
 export default function Individual() {
     return (
-        <div className="individual-container">
-            <div>
-                MOSQUITO NETS <img />
+        <div>
+            <div className="community-container">
+                <div className="project-title">INDIVIDUAL PROJECTS</div>
+                <div className="five">MOSQUITO NETS</div>
+                <div className="six">CHILDREN SCHOOLING</div>
+                <div className="seven">MAIZE</div>
+                <div className="eight">ANIMAL</div>
             </div>
-            <div>
-                CHILDREN SCHOOLING
-                <img />
-            </div>
-            <div>
-                MAIZE <img />
-            </div>
-            <div>
-                ANIMAL <img />
-            </div>
-
+            <button className="btn" onClick={() => setIndividual(false)}>
+                X
+            </button>
             <div className="donationButton">
                 <form
                     action="https://www.paypal.com/cgi-bin/webscr"

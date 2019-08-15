@@ -203,6 +203,18 @@ input.custom {
     width: 1200px;
     /* border: dotted green 2px; */
 }
+
+.aroundUploader {
+    position: absolute;
+    width: 100%;
+    height: 830px;
+    background-color: black;
+    opacity: 0.8;
+    border: 2px solid darkblue;
+    top: 0px;
+    z-index: 4;
+}
+
 .uploaderPic {
     width: 400px;
     height: 150px;
@@ -210,20 +222,10 @@ input.custom {
     position: absolute;
     color: white;
     text-align: center;
-    top: 1%;
+    top: 50%;
     left: 50%;
     border: 2px solid darkblue;
     border-radius: 20px;
-}
-
-.aroundUploader {
-    position: absolute;
-    width: 1400px;
-    height: 1800px;
-    background-color: rgb(117, 7, 135);
-    opacity: 0.8;
-    border: 2px solid darkblue;
-    top: 0px;
 }
 
 .btn {
@@ -236,27 +238,30 @@ input.custom {
 
 .btn:hover {
     position: absolute;
-    right: 4%;
-    top: 3%;
-    background: red;
+    background: darkgray;
     border: black 2px solid;
     border-radius: 50%;
     font-weight: bold;
-    font-size: 20px;
     transition: 0.2s;
 }
 
 .friendbtn {
+    /* position: absolute; */
+    right: 50px;
+    top: 0px;
     border-radius: 20px;
     padding: 5px;
     margin-top: 10px;
-    background-color: rgb(255, 140, 0);
+    background-color: rgb(2, 35, 10);
+    color: white;
+    margin-bottom: 30px;
 }
 
 .friendbtn:hover {
     text-transform: uppercase;
     font-weight: bold;
-    background-color: rgb(228, 3, 3);
+    background-color: white;
+    color: rgb(2, 35, 10);
 }
 .profile {
     position: absolute;
@@ -300,13 +305,16 @@ input.custom {
     border-radius: 20px;
     padding: 5px;
     margin-top: 10px;
-    background-color: rgb(255, 140, 0);
+    background-color: rgb(2, 35, 10);
+    color: white;
+    margin-bottom: 30px;
 }
 
 .addbtn:hover {
     text-transform: uppercase;
     font-weight: bold;
-    background-color: rgb(228, 3, 3);
+    background-color: white;
+    color: rgb(2, 35, 10);
 }
 
 .profile .bioAdd {
@@ -362,6 +370,9 @@ img.newUsers {
 .otherprofileAppearance {
     /* border: 1px white solid; */
     width: 50%;
+    position: absolute;
+    width: 500px;
+    top: 150px;
 }
 .bioBox textarea {
     position: absolute;
@@ -393,16 +404,16 @@ img.newUsers {
 .bioBox .myNameIs {
     position: absolute;
     text-decoration: none;
-    top: 160px;
-    left: 20%;
+    top: 20px;
+    left: 50%;
     font-weight: bold;
     font-size: 24px;
     color: black;
 }
 .bioBox .bioBox2 {
     position: absolute;
-    top: 220px;
-    left: 20%;
+    top: 80px;
+    left: 50%;
 }
 
 .findPeopleStyled {
@@ -418,11 +429,9 @@ img.newUsers {
 
 .chat {
     color: white;
-    text-align: center;
-    /* background-color: rgb(255, 237, 0); */
+    text-align: left;
     opacity: 0.8;
     border-radius: 20px;
-    /* border: 5px solid rgb(255, 140, 0); */
     margin: 10px 50px 0px 50px;
 }
 
@@ -431,16 +440,17 @@ img.newUsers {
     margin-top: 80px;
 }
 .chat-container {
+    display: flex;
+    padding-left: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
     height: 500px;
-    width: 900px;
+    width: 1100px;
     overflow-y: scroll;
     background-color: rgb(0, 128, 38);
     color: white;
     border-radius: 20px;
     /* border: 3px solid rgb(255, 140, 0); */
-    position: relative;
-    left: 15%;
-    padding: 1px;
 }
 
 .chat-message {
@@ -472,8 +482,8 @@ img.newUsers {
 }
 
 .chat-message img {
-    width: 200px;
-    height: 250px;
+    width: 150px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -548,7 +558,8 @@ img.newUsers {
 
 .friends-container {
     /* border: 1px solid black; */
-    position: relative;
+    position: absolute;
+    top: 100px;
     display: inline-block;
     display: inline-flex;
     flex-direction: row;
@@ -570,16 +581,15 @@ img.newUsers {
     top: 50px;
 }
 .donationButton {
-    position: relative;
-    /* top: 400px;
-    left: 50px; */
+    position: absolute;
+    top: 280px;
+    left: 130px;
 }
 
 .Kenya-container {
     display: flex;
     align-content: flex-end;
     height: 500px;
-    border: 1px red solid;
     margin-top: 80px;
     font-size: 40px;
     background-image: url("kenya.jpg");
@@ -668,7 +678,7 @@ img.newUsers {
     top: 0px;
     width: 100%;
     height: 100%;
-    background-color: yellow;
+    background-color: rgb(196, 111, 31);
 }
 
 .individualPop {
@@ -676,5 +686,204 @@ img.newUsers {
     top: 0px;
     width: 100%;
     height: 100%;
-    background-color: yellow;
+    background-color: rgb(196, 111, 31);
+}
+.project-title {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+}
+.community-container {
+    /* width: 1330px; */
+    margin-top: 250px;
+    height: 300px;
+    display: flex;
+    margin-top: 150px;
+    background-color: rgb(196, 111, 31);
+}
+
+.community-container div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.one {
+    background-image: url("water.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.one:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+.two {
+    background-image: url("health.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+.two:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+.three {
+    background-image: url("roof.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+.three:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+.four {
+    background-image: url("children.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.four:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+
+.five {
+    background-image: url("net.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+.five:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+
+.six {
+    background-image: url("schooling.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.six:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+
+.seven {
+    background-image: url("maize.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.seven:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
+}
+
+.eight {
+    background-image: url("cow2.jpg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    padding: 1rem;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.eight:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    color: red;
+    font-size: 40px;
 }

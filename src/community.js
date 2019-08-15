@@ -2,22 +2,18 @@ import React from "react";
 
 export default function Community() {
     return (
-        <div className="community-container">
-            <div>
-                WATER <img src="../public/water.jpg" />
-            </div>
-            <div>
-                HEALTH CENTAR <img />
-            </div>
-            <div>
-                SCHOOL'S ROOF <img />
-            </div>
-            <div>
-                ORPHANAGE <img />
+        <div>
+            <div className="community-container">
+                <div className="project-title">COMMUNITY PROJECTS</div>
+                <div className="one">WATER</div>
+                <div className="two">HEALTH CENTAR</div>
+                <div className="three">SCHOOL'S ROOF</div>
+                <div className="four">ORPHANAGE</div>
             </div>
             <button className="btn" onClick={() => setCommunity(false)}>
                 X
             </button>
+
             <div className="donationButton">
                 <form
                     action="https://www.paypal.com/cgi-bin/webscr"

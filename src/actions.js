@@ -12,7 +12,7 @@ export async function receiveUsers() {
 
 export async function beFriends(id) {
     await axios.post("/friendship/", {
-        button: "Accept friend request",
+        button: "Accept Team Up request",
         id: id
     });
 
@@ -24,7 +24,7 @@ export async function beFriends(id) {
 
 export async function unFriend(id) {
     await axios.post("/friendship/", {
-        button: "Unfriend",
+        button: "No Team no more",
         id: id
     });
     return {

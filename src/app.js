@@ -13,7 +13,6 @@ import Transition from "react-transition-group/Transition";
 import Projects from "./projects";
 import Kenya from "./kenya";
 
-
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -51,11 +50,15 @@ export default class App extends React.Component {
                                 </Link>
 
                                 <Link to="/">
-                                    <p>My profile</p>
+                                    <p>My Profile</p>
                                 </Link>
 
                                 <Link to="/findpeople">
-                                    <p>Find people </p>
+                                    <p>Find People</p>
+                                </Link>
+
+                                <Link to="/friends">
+                                    <p>My Conntacts</p>
                                 </Link>
                             </div>
 

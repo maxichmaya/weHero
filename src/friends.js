@@ -33,7 +33,7 @@ export default function Friends() {
     return (
         <div className="friends-container">
             <div className="amigos">
-                <h1>AMIGOS</h1>
+                <h1>MY TEAM</h1>
                 {users &&
                     users.map(user => (
                         <div key={user.id}>
@@ -51,13 +51,13 @@ export default function Friends() {
                                 className="firstBtn"
                                 onClick={e => dispatch(unFriend(user.id))}
                             >
-                                Unfriend
+                                No Team No More
                             </button>
                         </div>
                     ))}
             </div>
             <div className="amigos-wannabes">
-                <h1>AMIGOS WANNABE</h1>
+                <h1>TEAM WANNABE</h1>
                 {wannabes &&
                     wannabes.map(wannabes => (
                         <div key={wannabes.id}>
@@ -75,7 +75,7 @@ export default function Friends() {
                                 className="firstBtn"
                                 onClick={e => dispatch(beFriends(wannabes.id))}
                             >
-                                Accept friend request
+                                Accept Team Up request
                             </button>
                         </div>
                     ))}

@@ -23,6 +23,7 @@ export default function FriendButton(otherProfileId) {
     }, []);
 
     async function friendButton() {
+        console.log("WHAT IS THE BUTTON", button);
         try {
             const { data } = await axios.post("/friendship/", {
                 id: otherProfileId.otherProfileId,
