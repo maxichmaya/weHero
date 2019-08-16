@@ -90,6 +90,7 @@ body {
     color: white;
     z-index: 3;
     left: 50px;
+    font-size: 40px;
 }
 .registration {
     position: absolute;
@@ -369,13 +370,32 @@ img.newUsers {
 .friendsPic {
     margin-top: 20px;
     margin-left: 20px;
-    border: solid rgb(255, 237, 0) 4px;
+    border: solid rgb(2, 35, 10) 4px;
     /* max-width: 380px; */
     width: 200px;
     height: 250px;
     object-fit: contain;
     border-radius: 10px;
-    background-color: rgb(255, 237, 0);
+    background-color: rgb(2, 35, 10);
+}
+
+.private {
+    position: absolute;
+    left: 175px;
+    top: 282px;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: rgb(2, 35, 10);
+    color: white;
+    margin-bottom: 30px;
+}
+
+.private:hover {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: white;
+    color: rgb(2, 35, 10);
 }
 
 .otherprofileAppearance {
@@ -464,8 +484,7 @@ img.newUsers {
     /* overflow-y: hidden; */
     background-color: rgb(2, 35, 10);
     color: white;
-    border-radius: 20px;
-    /* border: 3px solid rgb(255, 140, 0); */
+    border: 3px solid black;
 }
 
 .chat-message {
@@ -614,9 +633,9 @@ img.newUsers {
 }
 
 .aboutKenya {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    padding-right: 150px;
+    padding-right: 25px;
     padding-top: 100px;
 }
 

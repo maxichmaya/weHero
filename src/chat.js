@@ -13,7 +13,12 @@ export function Chat(props) {
     const elemRef = useRef();
 
     useEffect(() => {
+        console.log(elemRef.current.scrollTop);
+        console.log(elemRef.current.scrollHeight);
+        console.log(elemRef.current.clientHeight);
         socket.emit("show new messages");
+        elemRef.current.scrollTop =
+            elemRef.current.scrollHeight - elemRef.current.clientHeight;
     }, []);
 
     const keyCheck = e => {
@@ -26,6 +31,7 @@ export function Chat(props) {
             e.target.value = "";
         }
     };
+    console.log("SHOW YOURSELF", chatMessages);
     return (
         <div className="chat">
             <h1>Check news, updates and discuss important matters</h1>
@@ -33,14 +39,15 @@ export function Chat(props) {
                 {chatMessages &&
                     chatMessages.map(message => (
                         <div key={message.id}>
-                            <div className="chat-message" ref={elemRef}>
+                            <div className="chat-message">
                                 <p className="chat-identification">
                                     {message.first} {message.last}
                                 </p>
                                 <p>{message.message}</p>
                             </div>
-
-                            <img src={message.chatimageid} />
+                            {message.chatimageid && (
+                                <img src={message.chatimageid} />
+                            )}
                         </div>
                     ))}
             </div>

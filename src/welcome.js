@@ -15,10 +15,10 @@ export default class Welcome extends React.Component {
                 <div>
                     <div className="intro">
                         <h1 className="logoNameStart">Bridge</h1>
-                        <h4>
+                        <h5>
                             ...here to connect <br /> and make the world a
                             better place
-                        </h4>
+                        </h5>
                     </div>
 
                     <div className="homepage-hero-module">

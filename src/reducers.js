@@ -52,7 +52,7 @@ export default function(state = {}, action) {
 
     if (action.type == "NEW_MESSAGE") {
         var array = state.chatMessages.slice();
-        console.log(action.text);
+        // console.log(action.text);
         if (array.length == 100) {
             array.shift();
         }

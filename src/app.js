@@ -38,8 +38,8 @@ export default class App extends React.Component {
                             <div className="traka">
                                 <p className="logoname">Bridge</p>
 
-                                <Link to="/kenya">
-                                    <p>Why Kenya</p>
+                                <Link to="/">
+                                    <p> We in Kenya</p>
                                 </Link>
 
                                 <Link to="/projects">
@@ -50,16 +50,16 @@ export default class App extends React.Component {
                                     <p>News</p>
                                 </Link>
 
-                                <Link to="/">
+                                <Link to="/profile">
                                     <p>My Profile</p>
+                                </Link>
+
+                                <Link to="/friends">
+                                    <p>Contacts</p>
                                 </Link>
 
                                 <Link to="/findpeople">
                                     <p>Find People</p>
-                                </Link>
-
-                                <Link to="/friends">
-                                    <p>My Contacts</p>
                                 </Link>
                             </div>
 
@@ -100,7 +100,7 @@ export default class App extends React.Component {
                         >
                             <Route
                                 exact
-                                path="/"
+                                path="/profile"
                                 render={props => {
                                     return (
                                         <Profile
@@ -126,7 +126,7 @@ export default class App extends React.Component {
                             />
                             <Route path="/findpeople" component={Findpeople} />
                             <Route path="/projects" component={Projects} />
-                            <Route path="/kenya" component={Kenya} />
+                            <Route exact path="/" component={Kenya} />
                             <Route path="/friends" component={Friends} />
 
                             <Route
