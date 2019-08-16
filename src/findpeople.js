@@ -37,7 +37,7 @@ export function Findpeople() {
                             <Link to={`/user/${whoJoined.id}`}>
                                 <img
                                     className="newUsers"
-                                    src={whoJoined.imageid || "/3.png"}
+                                    src={whoJoined.imageid || "/default.jpg"}
                                     alt={`${whoJoined.first} ${whoJoined.last}`}
                                 />
                                 <h3 className="newUsers">
