@@ -620,6 +620,16 @@ img.newUsers {
     top: 280px;
     left: 130px;
 }
+.cripto {
+    background-image: url("cripto.png");
+    position: absolute;
+    width: 140px;
+    height: 55px;
+    top: 350px;
+    left: 100px;
+    border-radius: 25px;
+    border: 2px black solid;
+}
 
 .Kenya-container {
     display: flex;

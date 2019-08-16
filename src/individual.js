@@ -45,6 +45,7 @@ export default function Individual(props) {
                     />
                 </form>
             </div>
+            <div className="cripto"></div>
         </div>
     );
 }

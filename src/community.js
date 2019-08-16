@@ -47,6 +47,7 @@ export default function Community(props) {
                     />
                 </form>
             </div>
+            <div className="cripto"></div>
         </div>
     );
 }
